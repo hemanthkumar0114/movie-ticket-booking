@@ -1,7 +1,15 @@
+import { useState } from "react";
 import MovieCard from "../Components/MovieCard";
-import { movies } from "../api/movies";
+import { movies as movieData } from "../api/movies";
 
 function Home() {
+
+  const [movies, setMovies] = useState(movieData);
+
+  const deleteMovie = (id) => {
+    setMovies(movies.filter(movie => movie.id !== id));
+  };
+
   return (
     <div>
 
@@ -9,7 +17,11 @@ function Home() {
 
       <div className="movie-container">
         {movies.map((movie) => (
-          <MovieCard key={movie.id} movie={movie} />
+          <MovieCard
+            key={movie.id}
+            movie={movie}
+            deleteMovie={deleteMovie}
+          />
         ))}
       </div>
 

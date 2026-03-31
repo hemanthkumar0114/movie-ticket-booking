@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function MovieCard({ movie }) {
+function MovieCard({ movie, deleteMovie }) {
   return (
     <div className="movie-card">
 
@@ -15,6 +15,13 @@ function MovieCard({ movie }) {
       <Link to={`/movie/${movie.id}`}>
         <button>View Details</button>
       </Link>
+
+      <button
+        className="delete-btn"
+        onClick={() => deleteMovie(movie.id)}
+      >
+        Delete
+      </button>
 
     </div>
   );

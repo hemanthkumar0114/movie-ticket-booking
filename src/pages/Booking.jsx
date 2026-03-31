@@ -47,7 +47,17 @@ function Booking() {
           border: "none",
           borderRadius: "5px"
         }}
-        onClick={() => alert("Ticket Booked Successfully")}
+        onClick={() =>  {
+          if (total<=0){
+
+            alert("no tickets booked");
+        }
+          else{
+            alert(`${tickets} Ticket Booked Successfully`);
+          }
+          }
+        }
+        
       >
         Confirm Booking
       </button>

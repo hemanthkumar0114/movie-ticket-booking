@@ -162,3 +162,12 @@ button:hover {
     padding: 10px;
   }
 }
+.delete-btn {
+  background: red;
+  color: white;
+  margin-left: 10px;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
