@@ -26,7 +26,6 @@ nav {
 
 nav h2 {
   color: #ffcc00;
-  letter-spacing: 2px;
 }
 
 nav a {
@@ -71,10 +70,8 @@ h1 {
 
 .movie-card:hover {
   transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
 }
 
-/* Movie Image */
 .movie-card img {
   width: 200px;
   height: 300px;
@@ -91,7 +88,6 @@ button {
   margin-top: 10px;
   cursor: pointer;
   font-weight: bold;
-  transition: 0.3s;
 }
 
 button:hover {
@@ -99,7 +95,7 @@ button:hover {
   transform: scale(1.1);
 }
 
-/* Movie Details Page */
+/* Movie Details */
 .movie-details {
   text-align: center;
   padding: 40px;
@@ -108,66 +104,149 @@ button:hover {
 .movie-details img {
   width: 250px;
   border-radius: 10px;
-  box-shadow: 0 10px 30px black;
 }
 
-/* Booking Page */
+/* Booking Container */
 .booking-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* Booking Card */
+.booking-card {
+  width: 350px;
+  background: rgba(255,255,255,0.08);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+  text-align: center;
+}
+
+/* Booking Image */
+.booking-card img {
+  width: 200px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+/* Inputs */
+.booking-card input,
+.booking-card select {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+/* Booking Button */
+.booking-card button {
+  width: 100%;
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.booking-card button:hover {
+  background: #1d4ed8;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: red;
+  color: white;
+}
+
+.delete-btn:hover {
+  background: darkred;
+}
+
+/* Bill Container */
+.bill-container {
   max-width: 500px;
   margin: 40px auto;
   padding: 30px;
   background: rgba(255,255,255,0.08);
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
   text-align: center;
 }
 
-.booking-container img {
+.bill-container img {
   width: 200px;
   border-radius: 10px;
   margin: 15px 0;
 }
 
-.booking-container input {
-  padding: 10px;
-  width: 80px;
-  border-radius: 5px;
-  border: none;
-  margin: 10px;
-  text-align: center;
-  font-size: 16px;
+/* Seat Selection */
+.seat-selection-box {
+  width: 100%;
+  margin-top: 15px;
+  padding: 15px;
+  border-radius: 15px;
+  background: rgba(255,255,255,0.05);
 }
 
-.booking-container h2 {
-  color: #ffcc00;
-  margin: 10px 0;
+/* Seat Title */
+.seat-selection-box h3 {
+  margin-bottom: 10px;
 }
 
-/* Ticket Highlight */
+/* Seat Grid */
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+/* Seat Button */
+.seat {
+  padding: 12px;
+  background: #2563eb;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.seat.selected {
+  background: green;
+}
+
+.seat:hover {
+  transform: scale(1.05);
+}
+
+/* Seat Info */
+.seat-info {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+/* Total Price */
 .total-price {
-  font-size: 24px;
+  font-size: 22px;
   color: #00ffcc;
   margin-top: 10px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .movie-container {
-    flex-direction: column;
-    align-items: center;
+@media (max-width: 600px) {
+  .booking-card {
+    width: 90%;
   }
 
   nav {
     padding: 10px;
   }
-}
-.delete-btn {
-  background: red;
-  color: white;
-  margin-left: 10px;
-}
 
-.delete-btn:hover {
-  background: darkred;
+  .movie-container {
+    flex-direction: column;
+    align-items: center;
+  }
 }
